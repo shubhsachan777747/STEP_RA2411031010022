@@ -30,7 +30,6 @@ class PalindromeCheckerApp1 {
                 System.out.print("Enter a string: ");
                 String input = sc.nextLine();
 
-                // Normalize input
                 String cleaned = input.replaceAll("[^a-zA-Z0-9]", "").toLowerCase();
                 int n = cleaned.length();
                 boolean result = false;
@@ -74,8 +73,6 @@ class PalindromeCheckerApp1 {
         System.out.println("Thank you for using the Palindrome Checker App!");
         sc.close();
     }
-
-    // Method 1: Two Pointer (Best - O(1) Space)
     public static boolean isPalindromeMethod1(String s) {
         int left = 0;
         int right = s.length() - 1;
@@ -88,8 +85,6 @@ class PalindromeCheckerApp1 {
         }
         return true;
     }
-
-    // Method 2: Reverse Loop
     public static boolean isPalindromeMethod2(String s) {
         StringBuilder reversed = new StringBuilder();
         for (int i = s.length() - 1; i >= 0; i--) {
@@ -97,8 +92,6 @@ class PalindromeCheckerApp1 {
         }
         return s.equals(reversed.toString());
     }
-
-    // Method 3: Stack
     public static boolean isPalindromeMethod3(String s) {
         Stack<Character> stack = new Stack<>();
         for (char c : s.toCharArray()) {
@@ -111,8 +104,6 @@ class PalindromeCheckerApp1 {
         }
         return true;
     }
-
-    // Method 4: Stack + Queue
     public static boolean isPalindromeMethod4(String s) {
         Stack<Character> stack = new Stack<>();
         Queue<Character> queue = new LinkedList<>();
@@ -128,8 +119,6 @@ class PalindromeCheckerApp1 {
         }
         return true;
     }
-
-    // Method 5: Deque
     public static boolean isPalindromeMethod5(String s) {
         Deque<Character> deque = new ArrayDeque<>();
 
@@ -143,8 +132,6 @@ class PalindromeCheckerApp1 {
         }
         return true;
     }
-
-    // Method 6: LinkedList
     public static boolean isPalindromeMethod6(String s) {
         LinkedList<Character> list = new LinkedList<>();
 
@@ -158,8 +145,6 @@ class PalindromeCheckerApp1 {
         }
         return true;
     }
-
-    // Method 7: Recursion
     public static boolean isPalindromeMethod7(String s, int i, int n) {
         if (i >= n) return true;
 
